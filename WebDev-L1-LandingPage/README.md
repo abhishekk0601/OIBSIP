@@ -22,4 +22,4 @@ A responsive landing page for my Telegram deals channel, **LootDeals2x**.
 Open `index.html` in any browser.
 
 ## Notes
-The hero image is a real post from my Telegram channel (deal-post.jpeg). Footer Instagram and email links are placeholders.
+The hero image is a real post from my Telegram channel (deal-post.jpeg).
