@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abhishek Kumar - Portfolio</title>
+  <meta name="description" content="Portfolio of Abhishek Kumar, BCA student and web development intern.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Navigation: smooth scroll, active link, mobile menu button -->
+  <header class="nav">
+    <a class="brand" href="#home">Abhishek Kumar</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav>
+      <ul class="nav-links" id="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero: animated network background, name, role title, photo -->
+    <section class="hero-band" id="home">
+      <canvas id="network" aria-hidden="true"></canvas>
+      <div class="hero">
+        <div class="hero-text">
+          <h1>Hi, I'm Abhishek Kumar.</h1>
+          <p class="role">BCA student and web development intern</p>
+          <!-- The words after "I enjoy" are typed by script.js -->
+          <p class="typed-line">I enjoy <span class="typed" id="typed">building web pages</span></p>
+          <p class="intro">I build web pages with HTML and CSS, write programs in Python and Java, and edit videos. I am learning every day to become a software developer.</p>
+          <div class="hero-buttons">
+            <a class="btn" href="#projects">See my projects</a>
+            <a class="btn btn-ghost" href="#contact">Contact me</a>
+          </div>
+        </div>
+        <div class="photo-wrap">
+          <img src="profile.png" width="428" height="428" alt="Photo of Abhishek Kumar">
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me -->
+    <section class="section band-deep" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <h2>About me</h2>
+          <p>I am a second-year BCA student at Allenhouse Group of Institutions in Kanpur. I am doing a Web Development and Designing internship at Oasis Infobyte, where I build real projects step by step. I also edit videos and run content projects, and after graduation I want to work in software.</p>
+        </div>
+        <div class="about-side">
+          <!-- Stock photo slot: save your picture as images/workspace.jpg (page works without it) -->
+          <figure class="about-photo">
+            <img src="images/workspace.jpg" alt="" loading="lazy" onerror="this.closest('.about-photo').remove()">
+          </figure>
+          <dl class="facts">
+            <div><dt>Studying</dt><dd>BCA, second year</dd></div>
+            <div><dt>Internship</dt><dd>Oasis Infobyte, Web Development and Designing</dd></div>
+            <div><dt>Goal</dt><dd>Become a software developer</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills: three groups -->
+    <section class="section band-navy" id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h3>Web</h3>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+            <p>Used for my landing page and this portfolio.</p>
+          </div>
+          <div class="skill-group">
+            <h3>Programming</h3>
+            <ul>
+              <li>C</li>
+              <li>Python</li>
+              <li>Java</li>
+            </ul>
+            <p>Python runs my Telegram deal automation.</p>
+          </div>
+          <div class="skill-group">
+            <h3>Creative</h3>
+            <ul>
+              <li>Video editing</li>
+            </ul>
+            <p>Used for my content projects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section band-deep" id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+
+        <article class="project">
+          <!-- Screenshot slot: save your Task 1 screenshot as images/landing-page.png -->
+          <figure class="project-shot">
+            <img src="images/landing-page.png" alt="Screenshot of the LootDeals2x landing page" loading="lazy" onerror="this.closest('.project-shot').remove()">
+          </figure>
+          <div class="project-body">
+            <h3>LootDeals2x landing page</h3>
+            <p>A responsive landing page for my Telegram deals channel. It has a fixed navigation bar, a hero section, and a mobile-friendly layout. I made it for my Oasis Infobyte internship.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li></ul>
+       
+            <a class="btn btn-ghost btn-small" href="https://github.com/abhishekk0601/OIBSIP/tree/main/WebDev-L1-LandingPage" target="_blank" rel="noopener">View code on GitHub</a>
+          </div>
+        </article>
+
+        <article class="project flip">
+        
+          <figure class="project-shot">
+            <img src="images/telegram-bot.jpeg" alt="Screenshot of the Telegram channel where the bot posts deals" loading="lazy" onerror="this.closest('.project-shot').remove()">
+          </figure>
+          <div class="project-body">
+            <h3>Telegram deal automation</h3>
+            <p>A Python script that watches deal channels, sends the links to a converter bot, and posts the converted deals to my public channel. It runs all day and night on Railway.</p>
+            <ul class="tags"><li>Python</li><li>Telethon</li><li>Railway</li></ul>
+            <a class="btn btn-ghost btn-small" href="https://github.com/abhishekk0601/telegram-affiliate-bot" target="_blank" rel="noopener">View code on GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="section contact-bg" id="contact">
+    <div class="container">
+      <h2>Get in touch</h2>
+      <p class="contact-text">I am looking for chances to learn and build. Send me a message.</p>
+      <!-- CHANGE THIS: add your own email and LinkedIn link -->
+      <a class="btn" href="mailto:yourname@example.com">Email me</a>
+      <ul class="contact-list">
+        <li><span>Name</span> Abhishek Kumar</li>
+        <li><span>Email</span> <a href="mailto:25bca065abhishek@allenhouse.in">25bca065abhishek@allenhouse.in</a></li>
+        <li><span>LinkedIn</span> <a href="https://www.linkedin.com/in/abhishekk0601" target="_blank" rel="noopener">linkedin.com/in/abhishekk0601</a></li>
+        <li><span>GitHub</span> <a href="https://github.com/abhishekk0601" target="_blank" rel="noopener">github.com/abhishekk0601</a></li>
+      </ul>
+      <p class="copyright">&copy; <span id="year">2026</span> Abhishek Kumar. Made for the Oasis Infobyte internship.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
