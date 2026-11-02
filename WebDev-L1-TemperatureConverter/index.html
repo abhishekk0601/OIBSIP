@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temperature Converter</title>
+  <meta name="description" content="Convert temperatures between Celsius, Fahrenheit and Kelvin.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-mode="idle">
+  <!-- Falling snow or rising sparks, drawn by script.js -->
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <main class="app">
+    <header class="app-header">
+      <h1>Temperature Converter</h1>
+      <p>Convert between Celsius, Fahrenheit and Kelvin.</p>
+    </header>
+
+    <div class="panel">
+      <!-- Input side -->
+      <form class="controls" id="converter" novalidate>
+        <div class="field">
+          <label for="temp">Temperature</label>
+          <input id="temp" name="temp" type="text" inputmode="decimal" autocomplete="off" placeholder="For example 25 or -3.5" aria-describedby="error">
+          <p class="error" id="error" role="alert"></p>
+        </div>
+
+        <fieldset class="field units">
+          <legend>Convert from</legend>
+          <label class="unit">
+            <input type="radio" name="unit" value="C" checked>
+            <span>Celsius (°C)</span>
+          </label>
+          <label class="unit">
+            <input type="radio" name="unit" value="F">
+            <span>Fahrenheit (°F)</span>
+          </label>
+          <label class="unit">
+            <input type="radio" name="unit" value="K">
+            <span>Kelvin (K)</span>
+          </label>
+        </fieldset>
+
+        <button class="btn" type="submit">Convert</button>
+
+        <div class="presets">
+          <p class="presets-title">Try an example</p>
+          <div class="chips">
+            <button class="chip" type="button" data-value="0" data-unit="C">Freezing 0 °C</button>
+            <button class="chip" type="button" data-value="25" data-unit="C">Room 25 °C</button>
+            <button class="chip" type="button" data-value="37" data-unit="C">Body 37 °C</button>
+            <button class="chip" type="button" data-value="100" data-unit="C">Boiling 100 °C</button>
+            <button class="chip" type="button" data-value="0" data-unit="K">Absolute zero 0 K</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Output side: all three units at the same time -->
+      <section class="output" aria-live="polite">
+        <div class="output-head">
+          <h2>Result</h2>
+          <p class="condition" id="condition" hidden></p>
+        </div>
+
+        <div class="output-body">
+          <dl class="results">
+            <div><dt>Celsius</dt><dd id="out-c">-</dd></div>
+            <div><dt>Fahrenheit</dt><dd id="out-f">-</dd></div>
+            <div><dt>Kelvin</dt><dd id="out-k">-</dd></div>
+          </dl>
+
+          <!-- Thermometer: fills from -50 °C to 100 °C -->
+          <div class="thermo" aria-hidden="true">
+            <div class="thermo-col">
+              <div class="tube"><div class="fill" id="fill"></div></div>
+              <div class="bulb" id="bulb"></div>
+            </div>
+            <ul class="scale">
+              <li>100 °C</li>
+              <li>50 °C</li>
+              <li>0 °C</li>
+              <li>-50 °C</li>
+            </ul>
+          </div>
+        </div>
+        <p class="hint" id="hint">Enter a number and press Convert.</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
